@@ -13,6 +13,12 @@ class App
 {
     public function run(): void
     {
-        echo 'Entry point here!' . PHP_EOL;
+        $forest = new Forest(new RussianAnimalFactory());
+        $forest->init();
+        $forest->listen();
+
+        echo PHP_EOL;
+        $forest->setFactory(new CanadianAnimalFactory());
+        $forest->listen();
     }
 }

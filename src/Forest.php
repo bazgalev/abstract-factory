@@ -34,19 +34,19 @@ class Forest
         $this->animals = new \SplObjectStorage();
     }
 
-    public function init(int $bears = 2, int $wolfs = 2, int $birds = 23): void
+    public function init(): void
     {
         $this->animals->removeAll($this->animals);  //clear collection
 
-        for ($i = 0; $i < $bears; $i++) {
+        for ($i = 0; $i < 2; $i++) {
             $this->animals->attach($this->animalFactory->createBear());
         }
 
-        for ($i = 0; $i < $wolfs; $i++) {
+        for ($i = 0; $i < 2; $i++) {
             $this->animals->attach($this->animalFactory->createWolf());
         }
 
-        for ($i = 0; $i < $birds; $i++) {
+        for ($i = 0; $i < 23; $i++) {
             $this->animals->attach($this->animalFactory->createBird());
         }
     }
